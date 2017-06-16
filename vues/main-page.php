@@ -2,35 +2,39 @@
 	<section class="col-lg-4 divBorder">
 		<h1 id="title">Trombino-PoleS</h1>
 		<form action="" method="post">
-		<div class="col-lg-12">
+			<div class="col-lg-12">
 
-		</div>
-		<div class="col-lg-6  firstColumn">
-			<label class="labelAttr">visage</label>
-			<?php
-				getter('visage');
-			?>
-			<label class="labelAttr">nez</label>
-			<?php
-				getter('nez');
-			?>
-			<button class="buttonCheck">Hasard</button>
-		</div>
-		<div class="col-lg-6  secondColumn">
-			<label class="labelAttr">yeux</label>
-			<?php
-				getter('yeux');
-			?>
-			<label class="labelAttr">bouche</label>
-			<?php
-				getter('bouche');
-			?>
-			<input type="submit" value="Envoyer" class="buttonCheck">
-		</div>
-		<button id="bouton" class="buttonCheck place"><a href='index.php'>Refresh</a></button>
+			</div>
+			<div class="col-lg-6  firstColumn">
+				<label class="labelAttr">visage</label>
+				<?php
+					getter('visage');
+				?>
+				<label class="labelAttr">nez</label>
+				<?php
+					getter('nez');
+				?>
+				<button class="buttonCheck">Hasard</button>
+			</div>
+			<div class="col-lg-6  secondColumn">
+				<label class="labelAttr">yeux</label>
+				<?php
+					getter('yeux');
+				?>
+				<label class="labelAttr">bouche</label>
+				<?php
+					getter('bouche');
+				?>
+				<input type="submit" value="Envoyer" class="buttonCheck">
+			</div>
+			<button id="bouton" class="buttonCheck place"><a href='index.php'>Refresh</a></button>
 
-
-</form>
+		</form>
+		<form class="" action="index.html" method="post">
+			<?php
+			hasard('visage');
+			?>
+		</form>
 </section>
 
 	<?php

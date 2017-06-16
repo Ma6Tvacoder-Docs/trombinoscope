@@ -24,9 +24,9 @@ function setter($data,$photo){
 		$sql = 'INSERT INTO '.$data.'('.$select.') VALUES ("'.$photo.'")';
 		$query = $pdo -> query($sql);
 	}
-	
+
 }
-	
+
 
 
 function saver($nom,$ensemble){
@@ -114,6 +114,20 @@ function getter($data){
 		}?>
 		</select>
 		<?php
-			$tableau[] = $data;	
-			
+			$tableau[] = $data;
+
+}
+// Fonction Hasard
+function hasard($data){
+	global $pdo;
+	global $tableau;
+	global $ensemble;
+	$sql = 'SELECT * FROM '.$data;
+	$query = $pdo -> query($sql);
+	$result = $query->fetchAll(PDO::FETCH_OBJ);
+	$countResult = count($result);
+
+	var_dump($result);
+	echo $result[10]->img_visage;
+
 }
