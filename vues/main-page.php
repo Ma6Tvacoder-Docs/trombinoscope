@@ -1,7 +1,7 @@
 <div class="content">
 	<section class="col-lg-4 divBorder">
 		<h1 id="title">Trombino-PoleS</h1>
-		<form action="" method="post">
+		<form action="" method="post" id="form">
 		<div class="col-lg-12">
 
 		</div>
@@ -25,6 +25,7 @@
 			<?php
 				getter('bouche');
 			?>
+			<button id="hasard">Random</button>
 			<input type="submit" value="Envoyer" class="buttonCheck">
 		</div>
 		<button id="bouton" class="buttonCheck place"><a href='index.php'>Refresh</a></button>
