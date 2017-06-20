@@ -33,7 +33,57 @@ $(function(){
 			$("#form").submit();
 
 			// Finalement, on submit le tout avec les options hasardeuses
-	})
+	});
+
+	$('#personnage').on("change", function(e){
+		e.preventDefault();
+		$.ajax({
+			url: "modeles/liste.php",
+			type: "POST",
+			data: {
+				id: $('#personnage').val()
+			}
+		}).
+		done(function(data){
+			data = JSON.parse(data);
+			console.log(data);
+			let visages = $('#visage').children();
+			let yeux = $('#yeux').children();
+			let nez = $('#nez').children();
+			let bouche = $('#bouche').children();
+			
+			for (var i = 0; i < visages.length; i++) {
+				if (visages.eq(i).val() == data[0].visage) {
+					console.log(i);
+					visages.eq(i).attr('selected','selected');
+				}
+			}			
+			for (var i = 0; i < yeux.length; i++) {
+				if (yeux.eq(i).val() == data[0].yeux) {
+					console.log(i);
+					yeux.eq(i).attr('selected','selected');
+				}
+			}			
+			for (var i = 0; i < bouche.length; i++) {
+				if (bouche.eq(i).val() == data[0].bouche) {
+					console.log(i);
+					bouche.eq(i).attr('selected','selected');
+				}
+			}			
+			for (var i = 0; i < nez.length; i++) {
+				if (nez.eq(i).val() == data[0].nez) {
+					console.log(i);
+					nez.eq(i).attr('selected','selected');
+				}
+			}
+
+			$("#form").submit();
+
+
+		})
+	});
+
+
 
 	$("#sauvegarde_image").on("submit", function(e){
 		if ( $('#visage').val() != "" && $('#yeux').val() != "" && $('#nez').val() != "" && $('#bouche').val() != "") {

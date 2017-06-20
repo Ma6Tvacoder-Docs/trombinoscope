@@ -9,7 +9,19 @@
 		<button id="hasard">Random</button>
 		<form action="" method="post" id="form">
 			<div class="col-lg-12">
+				<select id="personnage" name="personnage">
+					<option value="">Choissisez un personnage en BDD</option>
+					<?php 
 
+						$personnages = $pdo->query("SELECT id, nom FROM ensemble");
+						foreach ($personnages as $personnage) :
+							print_r($personnage);
+							echo '<option value=' . $personnage['id'] . '>' . $personnage['nom'] . '</option>';
+						endforeach;
+
+					 ?>
+
+				</select>
 			</div>
 			<div class="col-lg-6  firstColumn">
 				<label class="labelAttr">visage</label>
