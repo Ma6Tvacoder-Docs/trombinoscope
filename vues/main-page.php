@@ -1,38 +1,41 @@
 <div class="content">
 	<section class="col-lg-4 divBorder">
 		<h1 id="title">Trombino-PoleS</h1>
+		<form name="sauvegarde_image" id="sauvegarde_image" action="">
+				<label for="nom_sauvegarde" > Nom </label>
+				<input type="text" name="nom_sauvegarde" id="nom_sauvegarde" required>
+				<button id="sauvegarde" type="submit"> Sauvegarder </button>
+		</form>
+		<button id="hasard">Random</button>
 		<form action="" method="post" id="form">
-		<div class="col-lg-12">
+			<div class="col-lg-12">
 
-		</div>
-		<div class="col-lg-6  firstColumn">
-			<label class="labelAttr">visage</label>
-			<?php
-				getter('visage');
-			?>
-			<label class="labelAttr">nez</label>
-			<?php
-				getter('nez');
-			?>
-			<button class="buttonCheck">Hasard</button>
-		</div>
-		<div class="col-lg-6  secondColumn">
-			<label class="labelAttr">yeux</label>
-			<?php
-				getter('yeux');
-			?>
-			<label class="labelAttr">bouche</label>
-			<?php
-				getter('bouche');
-			?>
-			<button id="hasard">Random</button>
-			<input type="submit" value="Envoyer" class="buttonCheck">
-		</div>
-		<button id="bouton" class="buttonCheck place"><a href='index.php'>Refresh</a></button>
-
-
-</form>
-</section>
+			</div>
+			<div class="col-lg-6  firstColumn">
+				<label class="labelAttr">visage</label>
+				<?php
+					getter('visage');
+				?>
+				<label class="labelAttr">nez</label>
+				<?php
+					getter('nez');
+				?>
+				<button class="buttonCheck">Hasard</button>
+			</div>
+			<div class="col-lg-6  secondColumn">
+				<label class="labelAttr">yeux</label>
+				<?php
+					getter('yeux');
+				?>
+				<label class="labelAttr">bouche</label>
+				<?php
+					getter('bouche');
+				?>
+				<input type="submit" value="Envoyer" class="buttonCheck">
+			</div>
+			<button id="bouton" class="buttonCheck place"><a href='index.php'>Refresh</a></button>
+		</form>
+	</section>
 
 	<?php
 $ensembleArray = array();

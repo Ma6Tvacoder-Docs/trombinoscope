@@ -34,4 +34,30 @@ $(function(){
 
 			// Finalement, on submit le tout avec les options hasardeuses
 	})
+
+	$("#sauvegarde_image").on("submit", function(e){
+		if ( $('#visage').val() != "" && $('#yeux').val() != "" && $('#nez').val() != "" && $('#bouche').val() != "") {
+			e.preventDefault();
+			$.ajax({
+				url: "modeles/rest.php",
+				type: "POST",
+				data: {
+					nom : $('#nom_sauvegarde').val(),
+					visage : $('#visage').val(),
+					yeux : $('#yeux').val(),
+					nez : $('#nez').val(),
+					bouche : $('#bouche').val(),
+				}
+			}).
+			done(function(data){
+				console.log(data);
+				if (data == 'true') {
+					alert('Sauvegarde réalisée.');
+				}
+				else {
+					alert('Erreur lors de la sauvegarde');
+				}
+			})
+		}
+	});
 });
