@@ -104,7 +104,7 @@ function getter($data){
 	$countResult = count($result);
 
 	?>
-		<select name='<?=$data;?>' required class="option">
+		<select name='<?=$data;?>' id='<?=$data;?>' required class="option">
 		<option value="<?php if(isset($_POST[$data])){echo $_POST[$data];}?>"><?php if(isset($_POST[$data])){echo $_POST[$data];}else{ echo 'Sélectionner une valeur';}?></option>
 	<?php
 		for($i=0;$i <$countResult;$i++){
