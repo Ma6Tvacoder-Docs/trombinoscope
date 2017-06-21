@@ -1,5 +1,40 @@
 $(function(){
 
+	let selection_visage = $('#visage').val();
+	let listes_visage = $('#visage').children();
+
+	for (let j = 1; j < listes_visage.length; j++) {
+		if (listes_visage.eq(j).val() == selection_visage) {
+			listes_visage.eq(j).attr('selected','selected');
+		}
+	}
+	let selection_yeux = $('#yeux').val();
+	let listes_yeux = $('#yeux').children();
+
+	for (let j = 1; j < listes_yeux.length; j++) {
+		if (listes_yeux.eq(j).val() == selection_yeux) {
+			listes_yeux.eq(j).attr('selected','selected');
+		}
+	}
+	let selection_nez = $('#nez').val();
+	let listes_nez = $('#nez').children();
+
+	for (let j = 1; j < listes_nez.length; j++) {
+		if (listes_nez.eq(j).val() == selection_nez) {
+			listes_nez.eq(j).attr('selected','selected');
+		}
+	}
+	let selection_bouche = $('#bouche').val();
+	let listes_bouche = $('#bouche').children();
+
+	for (let j = 1; j < listes_bouche.length; j++) {
+		if (listes_bouche.eq(j).val() == selection_bouche) {
+			listes_bouche.eq(j).attr('selected','selected');
+		}
+	}
+
+
+
 	$("#hasard").on("click", function(e){ // Fonction appelée au click
 		e.preventDefault(); // Pour empecher le refresh et la vérifiication des champs au cas ou ils sont vides
 
@@ -46,7 +81,6 @@ $(function(){
 		}).
 		done(function(data){
 			data = JSON.parse(data);
-			console.log(data);
 			let visages = $('#visage').children();
 			let yeux = $('#yeux').children();
 			let nez = $('#nez').children();
@@ -54,25 +88,21 @@ $(function(){
 			
 			for (var i = 0; i < visages.length; i++) {
 				if (visages.eq(i).val() == data[0].visage) {
-					console.log(i);
 					visages.eq(i).attr('selected','selected');
 				}
 			}			
 			for (var i = 0; i < yeux.length; i++) {
 				if (yeux.eq(i).val() == data[0].yeux) {
-					console.log(i);
 					yeux.eq(i).attr('selected','selected');
 				}
 			}			
 			for (var i = 0; i < bouche.length; i++) {
 				if (bouche.eq(i).val() == data[0].bouche) {
-					console.log(i);
 					bouche.eq(i).attr('selected','selected');
 				}
 			}			
 			for (var i = 0; i < nez.length; i++) {
 				if (nez.eq(i).val() == data[0].nez) {
-					console.log(i);
 					nez.eq(i).attr('selected','selected');
 				}
 			}
@@ -100,7 +130,6 @@ $(function(){
 				}
 			}).
 			done(function(data){
-				console.log(data);
 				if (data == 'true') {
 					alert('Sauvegarde réalisée.');
 				}
