@@ -1,10 +1,11 @@
 *{
 	box-sizing: border-box;
 }
+
 body{
 	/*background-image: url(modeles/img/background.jpg);*/
 	background-size: 50%;
-	background-image: url("../modeles/img/background.jpg");
+	/*background-image: url("../modeles/img/background.jpg");*/
 	height: 100vh;
 }
 .content{

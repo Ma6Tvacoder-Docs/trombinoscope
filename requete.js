@@ -1,7 +1,13 @@
 $(function(){
 
+	/*Lors du chargement de la page après un submit, les select sont remplis avec les valeurs sous forme de chemin d'accès, on souhaite récupérer les prénoms correspondants a la place*/
+
+
 	let selection_visage = $('#visage').val();
 	let listes_visage = $('#visage').children();
+
+	// Dans selection_visage on selectionne la valeur (actuellement égale au chemin de fichier)
+	//
 
 	for (let j = 1; j < listes_visage.length; j++) {
 		if (listes_visage.eq(j).val() == selection_visage) {
